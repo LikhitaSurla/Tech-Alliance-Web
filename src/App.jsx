@@ -5,6 +5,7 @@ import Gamepage from "./components/Gamepage.jsx"
 
 import "./index.css"
 import Answer from "./components/Answer.jsx";
+// karthik
 
 const Game=()=>{
 
