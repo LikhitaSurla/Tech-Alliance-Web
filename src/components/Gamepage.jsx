@@ -4,6 +4,7 @@ import Answer from './Answer';
  
  export default function Gamepage({c,questionNum}) {
     const{question,answers}=c;
+    
 // checkout
    return (
 <>
@@ -11,7 +12,6 @@ import Answer from './Answer';
     {questionNum} :{question}</div>
     {answers.map((c,idx)=><Answer key={idx} c={c} />
 )}
-
 
 </>   )
  }

@@ -2,9 +2,11 @@ import {useState} from "react";
 import {questions} from "./ques.js"
 import './style.css'
 import Gamepage from "./components/Gamepage.jsx"
+import {Stack,Button} from './Material.js'
 
 import "./index.css"
 import Answer from "./components/Answer.jsx";
+import Score from './components/Score.jsx'
 
 const Game=()=>{
 
@@ -12,7 +14,13 @@ const Game=()=>{
     // const[score,setScore]=useState(0);
     
     const startQuizBtn=()=>{    
-        setStart(true)
+      setStart(true)
+    }
+    const [quesState,setQuesState] = useState(true)
+    const [state,setState] = useState(false);
+    function changeState(){
+      setQuesState(false)
+      setState(true)
     }
 
 if(start===false){
@@ -32,25 +40,23 @@ return(
     </>
 )
 }
-else{
+else if(quesState===true){
     return(
 <>
-<div className="app">
-      <div className="main">
-        <h1>Quiz</h1>
-        <div className="scores">
-          <p id="attempts">Score :</p>
-
-          <p id="highscore">highScore : </p>
-        </div>
-      </div>
-      </div>
-{questions.map((c,idx)=><Gamepage c={c} key={idx} questionNum={idx+1}/>)}
-{/* <Answer score={score}/> */}
-
+  {questions.map((c,idx)=><Gamepage c={c} key={idx} questionNum={idx+1}/>)}
+  <div>
+  <Button variant="contained" onClick={changeState}>Submit</Button>
+  </div>
 </>
     )
 
+}
+else {
+ return(
+  <>
+   <Score state={state}/>
+  </>
+ )
 }
 
 }
