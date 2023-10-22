@@ -15,10 +15,6 @@ const Game=()=>{
         setStart(true)
     }
 
-
-
-
-
 if(start===false){
 return(
     <>
@@ -26,6 +22,7 @@ return(
       <div className="modal-content">
         <h2>Test your Brain</h2>
         <p>Are Youuu Reaaadddyyy🔥?</p>
+        {/* <p>Hiii</p> */}
         <button onClick={startQuizBtn} id="startQuizBtn" >Start Quiz</button>
         {/* {startQuizBtn  && <Questionpage />} */}
 
