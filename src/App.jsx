@@ -38,6 +38,7 @@ const Game=()=>{
       position: 'relative',
       height: '4vh',
     };
+    
     const buttonStyle = {
       position: 'absolute',
       top: '10px',

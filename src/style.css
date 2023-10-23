@@ -97,7 +97,9 @@ body{
     top:30%;
     left: 35%;
     background-color: #FF3CAC;
-    background-image: linear-gradient(315deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+    background-color: #3EECAC;
+    background-image: linear-gradient(19deg, #3EECAC 0%, #EE74E1 100%);
+    
     padding: 20px;
     text-align: center;
     display: flex;
@@ -168,8 +170,7 @@ h1{
     margin: auto;
     padding: 100px;
     margin-top: 156px;
-    background-image: linear-gradient(to left top, #be0000, #bb0012, #b8001e, #b30028, #ae0030, #ab0039, #a70041, #a20048, #9e0052, #97005c, #8f0066, #850c70);
-    color: white;
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
 }
 .text-class{
     font-weight:bold;
@@ -184,7 +185,6 @@ h1{
 }
 .img{
     height: 60px;
-    filter: invert(100%);
 }
 .child{
     display: flex;
