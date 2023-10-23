@@ -8,7 +8,7 @@ import Answer from './Answer';
    return (
 <>
 <div className='question'>
-    {questionNum} :{question}</div>
+    {questionNum} : {question}</div>
     {answers.map((c,idx)=><Answer key={idx} addScore={addScore} bool={bool} setBool={setBool} c={c}/>
 )}
 
