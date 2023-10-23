@@ -2,15 +2,14 @@ import React, { useState } from 'react';
 import '../style.css';
 import Answer from './Answer';
  
- export default function Gamepage({c,questionNum}) {
+ export default function Gamepage({c,questionNum,addScore}) {
     const{question,answers}=c;
-    
-// checkout
+    const [bool,setBool] = useState(false);
    return (
 <>
 <div className='question'>
     {questionNum} :{question}</div>
-    {answers.map((c,idx)=><Answer key={idx} c={c} />
+    {answers.map((c,idx)=><Answer key={idx} addScore={addScore} bool={bool} setBool={setBool} c={c}/>
 )}
 
 </>   )
