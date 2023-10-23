@@ -8,7 +8,7 @@ import Score from './components/Score.jsx'
 import Home from "./Home.jsx"
 
 
-export default function Game() {
+export default function Game(props) {
   const [start,setStart]=useState(false);
   const [score,setScore] = useState(0);
   const [quesState,setQuesState] = useState(true)
@@ -43,11 +43,12 @@ export default function Game() {
   
   const buttonStyle = {
     position: 'absolute',
-    top: '10px',
+    top: '-44px',
     right: '20px',
     backgroundColor:'#018749',
     fontWeight:'600',
-    fontFamily: 'Arial'
+    fontFamily: 'Arial',
+    // marginTop:''
   };
 
   const funcc=()=>{
@@ -58,6 +59,7 @@ export default function Game() {
 if(start===false){
 return(
   <>
+  <button className='back-btn1' onClick={props.func} >BACK</button>
     <div className="modal" id="quizModal">
     <div className="modal-content">
       <h2>Test your Brain</h2>
@@ -71,6 +73,7 @@ return(
 else if(quesState===true){
   return(
 <>
+<button className="back-btn" onClick={props.func}>BACK</button>
 <h1 className="heading">Quizz</h1>
 <div style={containerStyle}>
     <Button variant="contained" onClick={changeState} style={buttonStyle}>
@@ -86,6 +89,7 @@ else if(quesState===true){
 else {
 return(
 <>
+<button className="back-btn2" onClick={props.func}>BACK</button>
  <Score state={state} score={score}/>
 </>
 )

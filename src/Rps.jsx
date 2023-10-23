@@ -1,118 +1,96 @@
-import { useState,useEffect } from "react";
-import {Rock,Paper,Scissor} from "./images.js";
-import   "./RPS.css"
+import React, { useEffect, useState } from 'react'
+import {Paper,Scissor,Rock} from './images.js'
+import './RPS.css'
+const Rps = (props) => {
 
-
-const Rps=()=>{
-    const [count,setCount]=useState(0);
-    const [sount,setSount]=useState(0);
-    const [hiscore,setHiScore]=useState(0);
-
-    const [userMove,setuserMove]=useState();
-    const [computerMove,setComputerMove]=useState();
-    const obj={
+  const [computerMove,setComputerMove] = useState();
+    const obj ={
         rock:"scissor",
         paper:"rock",
-        scissor:"paper",
-
+        scissor:"paper"
     }
-    useEffect(()=>{
-        computersMove()
-    })
-    function greater()
-    {
-        if(hiscore<count)
-        {
-            setHiScore(count)
-        }
-    }
-    function reset()
-    {
-        greater()
-        setCount(0);
-        setSount(0);
-        
-    }
-    function comparing (choice)
-    {
-        setuserMove(choice)
-        console.log(computerMove,userMove)
-        if(obj[choice]==computerMove)
-        {
-            console.log('you win')
-            setCount(count+1)
-            
-        }
-        else if (choice==computerMove)
-        {
-            console.log("you tied")
-            
-        }
-        else{
-            console.log("you lose")
-            setSount(sount+1)
-        }
-        
+    const[score,setScore] = useState(0);
+    const[highScore,setHighScore] = useState(0);
+    const [userChoice,setUserChoice] = useState();
+    const [status,setStatus] = useState('');
     
-    }
-    const setRock=()=>{
-        
-        comparing("rock")
-        computersMove();
 
+    let resetScore = ()=>{
+        if(score>highScore){
+            setHighScore(score);
+        }
+        setScore(0);
     }
-    const setPaper=()=>{
-        
-        comparing("paper")
-        computersMove();
-    }
-    const setScissor=()=>{
-        
-        comparing("scissor")
-        computersMove();
-    }
-    const computersMove=()=>{
+
+    function pickComputermove(){
         const randomNumber=Math.random();
+
         if(randomNumber >=0 && randomNumber<1/3 )
-    {    
-        setComputerMove("rock")
-    }
-else if( randomNumber >=1/3 && randomNumber<2/3)
-    {
-        setComputerMove("paper");
-    }
-else if( randomNumber >=2/3 && randomNumber<1)
-    {
-        setComputerMove("scissor");
-    }  
-    
-     }
-    return(
-       
-            <>
+            {    
+                setComputerMove('rock');
+            }
+        else if( randomNumber >=1/3 && randomNumber<2/3)
+            {
+                setComputerMove('paper')
+            }
+        else if( randomNumber >=2/3 && randomNumber<1)
+            {
+                setComputerMove('scissor')
+            }  
+            
+        return computerMove;
+        }
+
+        function youWon(){
+            setScore(score+1);
+        }
+
+        function userChoices(choice){
+              setUserChoice(choice);
+                if(obj[choice]==computerMove){
+                    setStatus('you won')
+                    youWon();
+                }
+                else if(choice==computerMove){
+                    setStatus('Tie')
+                }
+                else{
+                    setStatus('You Lose')
+                }
+                pickComputermove();
+
+        }
+        useEffect(()=>{
+            pickComputermove();
+        },[])  
+
+    return (
+        <>
+            <button className="back-btn" onClick={props.rpsBack}>Back</button>
             <div className="process">
-        
-    <h3> Rock - Paper - Sciccors</h3>
-    <button onClick={setRock} className="move-button"><img src={Rock} className="move-icon"></img></button>
-    <button onClick={setPaper} className="move-button"><img src={Paper} className="move-icon"></img></button>
+                <script> alert('Are you Ready...?');</script>
+                <h3> Rock - Paper - Sciccors</h3>
+                <button onClick={()=>userChoices('rock')} className="move-button">
+                    <img src={Rock} className="move-icon" /></button>
+                <button onClick={()=>userChoices('paper')} className="move-button">
+                    <img src={Paper} className="move-icon" />
+                </button>
 
-    <button onClick={setScissor} className="move-button"><img src={Scissor} className="move-icon"></img></button>
-    <button onClick={()=>reset()}>restart </button>
-    <p> my score : {count} computer score : {sount}  </p>
- <p> high score : {hiscore}</p>
+                <button onClick={()=>userChoices('scissor')} className="move-button">
+                    <img src={Scissor} className="move-icon" />
+                </button>
 
-  
-   <p> usermove : {userMove}, Computer : {computerMove}</p>
-   
 
-  
-</div>
-    
- 
-            </>
-    )  ;          
-         
+                <p className="js-result result"></p>
+                <p className="js-moves"></p>
+                <p className="js-score score"></p>
+                <p className="score"><b>Result:</b><b>{status}</b></p>
+                <p className="score">Score:{score}</p>
+                <p className="score">High Score:{highScore}</p>
+                <button className="reset-score-button" onClick={resetScore}>Reset Score</button>
+            </div>
+        </>
+    )
 }
-export default Rps
-    
 
+export default Rps

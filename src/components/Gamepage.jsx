@@ -7,6 +7,7 @@ import Answer from './Answer';
     const [bool,setBool] = useState(false);
    return (
 <>
+{/* <button>back</button> */}
 <div className='question'>
     {questionNum} : {question}</div>
     {answers.map((c,idx)=><Answer key={idx} addScore={addScore} bool={bool} setBool={setBool} c={c}/>

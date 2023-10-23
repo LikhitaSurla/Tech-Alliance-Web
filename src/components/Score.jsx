@@ -2,6 +2,7 @@ import React from 'react'
 export default function Score(props) {
   return (
    props.state && 
+   <>
     <div className='grand-parent'>
       <div className='parent'>
     <div className='text-class'>Thanks For Attempting The Exam!!</div>
@@ -11,5 +12,6 @@ export default function Score(props) {
     </div>
   </div>
   </div>
+  </>
   )
 }
