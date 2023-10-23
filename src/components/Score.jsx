@@ -5,8 +5,7 @@ export default function Score(props) {
       <div className="main">
         <h1>Quiz</h1>
         <div className="scores">
-          <p id="attempts">Attempts:</p>
-          <p id="highscore">highScore : </p>
+          <p id="highscore">Score :{props.score} </p>
         </div>
       </div>
       </div>
