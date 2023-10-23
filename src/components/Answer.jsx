@@ -18,7 +18,7 @@ export default function Answer({c,idx,bool,setBool,addScore}){
       if(correct==true){
         addScore();
       }
-      setMyStyle('blue');
+      setMyStyle('#0076CE');
       setMyColor('white')
       if(count%2!=0){
         defaultColor();
@@ -32,7 +32,7 @@ export default function Answer({c,idx,bool,setBool,addScore}){
   return (
   <>
   <div className='options'>
-    <button className='btn'  disabled={bool} style = {{backgroundColor:myStyle,color:myColor}} key={idx} onClick={buttonClicked} >{text}</button>
+    <button className='btn'  disabled={bool} style = {{backgroundColor:myStyle,color:myColor}} key={idx} onClick={buttonClicked} ><p className='options-text'>{text}</p></button>
     </div>
     <Score />
   </>
