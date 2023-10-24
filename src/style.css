@@ -1,5 +1,5 @@
 
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Playpen+Sans:wght@500;600&family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Playpen+Sans:wght@500;600&family=Poppins:wght@400;500;600&display=swap');
 
 *{
     margin: 0;
@@ -15,13 +15,11 @@ body{
 } 
 
 .modal {
-    position: relative;
-    margin-top: 15%;
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
     top: 0%;
     left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
     justify-content: center;
     align-items: center;
 }
@@ -36,7 +34,6 @@ body{
     background-color: #FF3CAC;
     background-color: #3EECAC;
     background-image: linear-gradient(19deg, #3EECAC 0%, #EE74E1 100%);
-    
     padding: 20px;
     text-align: center;
     display: flex;
@@ -81,7 +78,8 @@ font-weight:bolder;
 padding:10px;
 display:flex;
 margin-left: 20px;
-color:white
+color:white;
+font-family: 'Playpen Sans', cursive;
   }
 .Questionsdiv{
     margin-top: 30px;
@@ -106,19 +104,20 @@ h1{
     border-radius: 10px;
     margin: auto;
     padding: 100px;
-    margin-top: 156px;
     background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
 }
 .text-class{
     font-weight:bold;
     font-size: 20px;
     font-family: 'Playpen Sans', cursive;
+    color: black;
 }
 .score-class{
         font-family: 'Courier New', Courier, monospace;
         font-weight: bold;
         font-size: 20px;
         margin-top: 20px;
+        color: black;
 }
 .img{
     height: 60px;
@@ -130,11 +129,10 @@ h1{
     color:rgb(221, 218, 20)
 }
 .grand-parent{
-    position: relative;
-    top: 0%;
-    left: 0;
+    height: 100vh;
     width: 100%;
-    height: 100%;
+    background-color: rgb(255, 255, 255);
+    padding: 135px;
 }
 .ready{
     color:black;
@@ -155,21 +153,11 @@ h1{
     border-radius: 4px;
     padding: 12px 30px;
 }
-.back-btn2{
+.back-btn2,.back-btn1{
     background-color: maroon;
     color:white;
     position:absolute;
-    margin-top:-125px;
-    margin-left :20px;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 35px;
-}
-.back-btn1{
-    background-color: maroon;
-    color:white;
-    position:absolute;
-    margin-top:-175px;
+    margin-top:15px;
     margin-left :20px;
     border: none;
     border-radius: 4px;
