@@ -73,6 +73,7 @@ return(
 else if(quesState===true){
   return(
 <>
+<div id="quespage">
 <button className="back-btn" onClick={props.func}>BACK</button>
 <h1 className="heading">Quizz</h1>
 <div style={containerStyle}>
@@ -82,6 +83,7 @@ else if(quesState===true){
 </div>
 <div className='Questionsdiv'>
 {questions.map((c,idx)=><Gamepage c={c}key={idx} alertstate={alertstate} setAlertState={setAlertState} questionNum={idx+1} addScore={addScore}/>)}
+</div>
 </div>
 </>
   )
