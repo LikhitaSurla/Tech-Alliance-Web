@@ -43,7 +43,7 @@ const Home=()=>{
           Quiz
         </Typography>
         <Typography variant="body2" color="text.secondary">
-        Quiz : Here, the player is given a sheet of questions with each question having 4 options each containing one correct answer among them . The player can select only one option ,once selected cannot be changed. Final score will be given when you submit the questions .Play and have fun !!!
+        Quiz : Here, the player is given a sheet of questions with each question having 4 options each containing one correct answer among them. The player can select only one option once selected cannot be changed. Final score will be given when you submit the questions .Play and have fun !!!
         </Typography>
       </CardContent>
       <CardActions>
