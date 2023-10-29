@@ -1,0 +1,59 @@
+#demo-row-radio-buttons-group-label{
+    color:#cbd5e0;
+    
+}
+#radiogroup{
+    border-color:#cbd5e0;
+    color:#cbd5e0;
+}
+
+#submitbtn{
+    background-color: #cbd5e0;
+    color:black;
+}
+#fname,#lname,#email,#phone{
+    color:#cbd5e0;
+}
+#phoneinput,#emailinput,#fname1,#lname1{
+    background-color: #cbd5e0;
+}
+#fname1,#lname1,#emailinput{
+    padding-top:5px;
+    padding-bottom: 5px;
+}
+#phoneinput{
+    padding-top:5px;
+    padding-bottom: 5px;
+}
+#emailinput{
+    margin-left:5px;
+
+}
+#demo-simple-select-autowidth{
+    background-color: #cbd5e0;
+    color: black;
+
+}
+#demo-simple-select-autowidth-label{
+   color: antiquewhite;
+}
+#selectid{
+    overflow: hidden;
+    position: relative;
+}
+#tab{
+border-color: black;
+}
+#formbox{
+    height:500px;
+    padding-left: 10px;
+    padding-right: 30px;
+    border-radius: 5px;
+    padding-bottom: 10px;
+}
+#imgdiv{
+    background-attachment:fixed;
+    background-repeat: repeat;
+    min-width: 800px;
+    left: 0;
+}
