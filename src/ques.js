@@ -11,10 +11,10 @@ export const questions = [
     {
       question: 'You are in third place now in a race.What place will you be in when you pass the person in second place?',
       answers: [
-        { text: 'first', correct: false },
-        { text: 'second', correct: true },
-        { text: 'third', correct: false },
-        { text: 'fourth', correct: false },
+        { text: 'First', correct: false },
+        { text: 'Second', correct: true },
+        { text: 'Third', correct: false },
+        { text: 'Fourth', correct: false },
       ],
     },
     {

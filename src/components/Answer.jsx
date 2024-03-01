@@ -1,41 +1,40 @@
+import { lightGreen } from '@mui/material/colors';
 import React ,{useState}from 'react';
-export default function Answer({c},idx) {
+import Score from './Score.jsx';
+export default function Answer({c,idx,bool,setBool,addScore}){
     const{text,correct}=c
     const [myStyle,setMyStyle] = useState('white')
     const [myColor,setMyColor] = useState('black')
-    let count=0;
-    const func=(c)=>{
-        if(correct===true){
-            setMyStyle('green')
-            setMyColor('white')
-            // setScore(score)
-        }
-        else{
-            setMyStyle('maroon')
-            setMyColor('white')
-        }
-        count++;
-        if(count%2!=0 ){
-          defaultColor()
-        }
-        console.log(count)
+    const [count,setCount] = useState(0);
+    const handleButtonClicked = ()=>{
+      setBool(true)
     }
-     const defaultColor=()=>{
-      if(myStyle==='green' ){
-        setMyColor('black')
+    const [score,setScore] = useState(0);
+    function defaultColor(){
         setMyStyle('white')
-      }
-      else if(myStyle==='maroon'){
         setMyColor('black')
-        setMyStyle('white')
-      }
     }
-  
+    function func(){
+      if(correct==true){
+        addScore();
+      }
+      setMyStyle('#0076CE');
+      setMyColor('white')
+      if(count%2!=0){
+        defaultColor();
+      }
+      setCount(count+1);
+    }
+    function buttonClicked(){
+      func();
+      handleButtonClicked();
+    }
   return (
   <>
   <div className='options'>
-    <button className='btn' style = {{backgroundColor:myStyle,color:myColor}} key={idx} onClick={func} >{text}</button>
+    <button className='btn'  disabled={bool} style = {{backgroundColor:myStyle,color:myColor}} key={idx} onClick={buttonClicked} ><p className='options-text'>{text}</p></button>
     </div>
+    <Score />
   </>
   )
 }
